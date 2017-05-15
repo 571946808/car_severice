@@ -1,0 +1,24 @@
+<div ng-include="'views/partial/header.html'"></div>
+	<div class="all-commit" ng-controller="mycommitController">
+		<div class="type-choose">
+			<select>
+				<option value = "全部提交" name="commit" ng-model="commit">全部提交</option>
+				<option value = "家庭维修" name="order" ng-model="order">家庭维修</option>
+				<option value = "公共报修" name="guarantee" ng-model="guarantee">公共报修</option>
+			</select>
+		</div>
+			<ul class="list-info">
+				<li>
+					<p ng-model="formData.type">
+					【{{formData.type}}】</p>
+					<p class="content-text"ng-model="formData.description">
+					{{formData.description}}
+					</p>
+					<p class="createTime" ng-model="formData.createTime">{{formData.createTime}}</p>
+					<p class="verifiedstate" ng-model="formData.verifiedstate">
+					{{formData.verifiedstate}}
+					</p>
+				</li>
+			</ul>
+		</div>
+

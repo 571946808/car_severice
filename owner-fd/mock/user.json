@@ -1,0 +1,10 @@
+{
+	"obj":{
+		"id":1, 
+		"username":"jx", 
+		"nickname": "jxxx",
+		"password":"123456",
+		"email": "123@qq.com"
+	}
+	
+}

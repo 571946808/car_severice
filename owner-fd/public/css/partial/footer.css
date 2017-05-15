@@ -1,0 +1,24 @@
+.footer {
+  background: #f0f0f0;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%; }
+  .footer ul {
+    border-top: 1px solid #ccc; }
+    .footer ul li {
+      list-style: none;
+      width: 25%;
+      height: 4rem;
+      line-height: 4rem;
+      float: left;
+      text-align: center;
+      font-size: 1.3rem; }
+      .footer ul li a {
+        color: #333; }
+      .footer ul li a:hover {
+        color: #38A2FA; }
+      .footer ul li a:active {
+        color: #38A2FA; }
+
+/*# sourceMappingURL=footer.css.map */

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <img src="public/img/photo1.jpg" class="header-img" alt="">
+            </div>
+            <div class="col-sm-3">
+                <div class="panel-group table-responsive" role="tablist">
+                    <div class="panel panel-primary leftMenu">
+                        <div class="panel-heading" id="collapseListGroupHeading1" data-toggle="collapse" data-target="#collapseListGroup1" role="tab" >
+                            <h4 class="panel-title">
+                                个人信息
+                                <span class="glyphicon glyphicon-chevron-down right"></span>
+                            </h4>
+                        </div>
+                        <div id="collapseListGroup1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="collapseListGroupHeading1">
+                            <ul class="list-group">
+                              <li class="list-group-item">
+                                <a href="#/sever">
+                                    <span class="glyphicon glyphicon-triangle-right"></span>查看信息
+                                </a>
+                              </li>
+                              <li class="list-group-item">
+                                <a href="#/severPassword">
+                                    <span class="glyphicon glyphicon-triangle-right"></span>修改密码
+                                </a>
+                              </li>
+                            </ul>
+                        </div>
+                    </div>  
+                    <div class="panel panel-primary leftMenu">
+                        <!-- 利用data-target指定要折叠的分组列表 -->
+                        <div class="panel-heading" id="collapseListGroupHeading3" data-toggle="collapse" data-target="#collapseListGroup3" role="tab" >
+                            <h4 class="panel-title">
+                                查看流水单
+                                <span class="glyphicon glyphicon-chevron-up right"></span>
+                            </h4>
+                        </div>
+                        <div id="collapseListGroup3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading3">
+                            <ul class="list-group">
+                              <li class="list-group-item">
+                                <!-- 利用data-target指定URL -->
+                                <a href="#/severNo">
+                                    <span class="glyphicon glyphicon-triangle-right"></span>未处理
+                                </a>
+                              </li>
+                              <li class="list-group-item">
+                                <a href="#/severIng">
+                                    <span class="glyphicon glyphicon-triangle-right"></span>正在处理
+                                </a>
+                              </li>
+                            </ul>
+                        </div>
+                    </div><!--panel end-->
+                    <div class="panel panel-primary leftMenu">
+                        <div class="panel-heading" id="collapseListGroupHeading2" data-toggle="collapse" data-target="#collapseListGroup2" role="tab" >
+                            <h4 class="panel-title">
+                                维修
+                                <span class="glyphicon glyphicon-chevron-down right"></span>
+                            </h4>
+                        </div>
+                        <div id="collapseListGroup2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading2">
+                            <ul class="list-group">
+                              <li class="list-group-item">
+                                <a href="#/severAlready">
+                                    <span class="glyphicon glyphicon-triangle-right"></span>维修历史
+                                </a>
+                              </li>
+                            </ul>
+                        </div>
+                    </div> 
+                    <div class="panel panel-primary leftMenu">
+                        <div class="panel-heading" id="collapseListGroupHeading4" data-toggle="collapse" data-target="#collapseListGroup4" role="tab" >
+                            <h4 class="panel-title">
+                                退出
+                                <span class="glyphicon glyphicon-chevron-down right"></span>
+                            </h4>
+                        </div>
+                        <div id="collapseListGroup4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading4">
+                            <ul class="list-group">
+                              <li class="list-group-item">
+                                <a href="#/home">
+                                    <span class="glyphicon glyphicon-triangle-right"></span>退出登录
+                                </a>
+                              </li>
+                            </ul>
+                        </div>
+                    </div>   
+                </div>
+            </div>
+            <div class="col-sm-9">
+                <div class="panel panel-primary margin-top-15">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">编辑单</h3>
+                    </div>
+                    <div class="panel-body" data-ng-init="load()">
+                        <form action="" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="control-label col-sm-3">检验员</label>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control" value="{{formData.jianyanyuan}}" ng-model="formData.jianyanyuan">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-3">零件费用</label>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control" value="{{formData.lingjian}}" ng-model="formData.lingjian">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-3">维修费用</label>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control" value="{{formData.weixiu}}" ng-model="formData.weixiu">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-3">费用详情</label>
+                                <div class="col-sm-7">
+                                    <textarea cols="30" rows="10" class="form-control" ng-model="formData.description">{{formData.description}}</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-3">状态修改</label>
+                                <div class="col-sm-7">
+                                    <select class="form-control" ng-model="formData.status">
+                                        <option value="2">维修中</option>
+                                        <option value="3">维修完成</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary col-sm-offset-5" ng-click="submit()">保存</button>
+                            <button type="button" class="btn btn-primary col-sm-offset-2" onclick="javascript:history.back(-1);">取消</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

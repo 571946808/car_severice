@@ -1,0 +1,28 @@
+<div ng-include="'views/partial/header.html'"></div>
+<input type="hidden" ng-model="formData.id">
+<div class="head">
+	<span ng-model="formData.createtime">{{formData.createtime}}</span>
+</div>
+<div class="wrap">
+	<p ng-model="formData.type">
+		【formData.type】
+		<span ng-show="deleteBtn" ng-click="delete()">删除</span>
+	</p>
+</div>
+<hr>
+<div class="content-text">
+	<p>维修描述：</p>
+	<p ng-model="formData.description">{{formData.description}}</p>
+</div>
+<div class="content-img">
+	<img scr="{{pic}}"/>
+</div>
+<div class="schedule">	
+	<p>
+		处理进度：<span ng-model="formData.verifiedstate">{{formData.verifiedstate}}</span>
+	</p>
+</div>
+<div class="foot">
+	<p ng-model="formData.repairname">{{formData.repairname}}</p>	
+	<p ng-model="formData.repairphone">{{formData.repairphone}}</p>
+</div>

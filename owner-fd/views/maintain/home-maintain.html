@@ -1,0 +1,95 @@
+<div ng-include="'views/partial/header.html'"></div>
+<form action="" class="maintain-form" name="maintainForm" novalidate>
+    <div class="input-group">
+        <label>联系人</label>
+        <input type="text" name="ownername" ng-model="formData.ownername" required>
+    </div>
+    <div class="input-group">
+        <label>联系电话</label>
+        <input type="text" class="username" name="telephone" ng-model="formData.telphone" required ng-pattern="/^[1]{1}[34578]{1}[0-9]{9}$/">
+    </div>
+    <div class="input-group">
+        <label>维修地址</label>
+        <input type="text" name="address" ng-model="formData.address" required>
+    </div>
+    <div class="input-group">
+        <label>预约时间</label>
+        <input type="text" id="timepicker" readonly="" name="input_date" ng-model="formData.time"/>
+    </div>
+    <div class="input-group">
+        <label>维修分类</label>
+        <ul class="maintain-type">
+            
+            <li>
+                <input type="checkbox" name="longtou" id="longtou" value="0">
+                <label turn-backgrd for="longtou">龙头管件</label>
+            </li>
+            <li>
+                <input type="checkbox" name="qiangmian" id="qiangmian" value="1">
+                <label turn-backgrd for="qiangmian">墙面地面</label>
+            </li>
+            <li>
+                <input type="checkbox" name="guandao" id="guandao" value="2">
+                <label turn-backgrd for="guandao">管道疏通</label>
+            </li>
+            <li>
+                <input type="checkbox" name="weiyu" id="weiyu" value="3">
+                <label turn-backgrd for="weiyu">卫浴洁具</label>
+            </li>
+            <li>
+                <input type="checkbox" name="door" id="door" value="4">
+                <label turn-backgrd for="door">门窗家具</label>
+            </li>
+            <li>
+                <input type="checkbox" name="lamp" id="lamp" value="5">
+                <label turn-backgrd for="lamp">灯具电路</label>
+            </li>
+            <li>
+                <input type="checkbox" name="lock" id="lock" value="6">
+                <label turn-backgrd for="lock">开锁换锁</label>
+            </li>
+            <li>
+                <input type="checkbox" name="jiadian" id="jiadian" value="7">
+                <label turn-backgrd for="jiadian">家电维修</label>
+            </li>
+            <li>
+                <input type="checkbox" name="other" id="other" value="8">
+                <label turn-backgrd for="other">其他维修</label>
+            </li>
+
+        </ul>
+    </div>
+    <div class="input-group">
+        <p class="describe-title">维修描述</p>
+        <textarea class="maintain-describe" name="" ng-model="formData.description"></textarea>
+    </div>
+    <!-- <div class="image-wrapper">
+       <i class="fa fa-image" ng-click="chooseImg()">选择文件</i>
+       <input class="image-upload" type="file">
+       <input class="image-upload" type="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" multiple="multiple"> 
+    </div> -->
+    <!-- <div>
+        <div ng-repeat="item in thumb">
+            <label>
+                <img class="img-preview" ng-src="{{item.imgSrc}}"/>
+            </label>
+            <span ng-if="item.imgSrc" ng-click="img_del($index)"></span>
+        </div>
+        <div ng-repeat="item in thumb_default">
+            <label>
+                <input type="file" id="one-input" accept="image/*" file-model="images" onchange="angular.element(this).scope().img_upload(this.files)"/>
+            </label>
+        </div>
+    </div> -->
+    <input type="file" file-model="myFile"/>
+    <div class="col-md-12">
+        <img ng-src="{{imageSrc}}" style="max-width:6rem;max-height:6rem;margin:0 auto;display:inline-block;" />
+    </div>
+    <div class="error">
+        <p class="error-field" ng-show="maintainForm.ownername.$dirty && maintainForm.ownername.$invalid || maintainForm.ownername.$pristine && submitted">请输入用户名</p>
+        <p class="error-field" ng-show="maintainForm.telephone.$dirty && maintainForm.telephone.$invalid || maintainForm.telephone.$pristine && submitted">请输入正确格式的联系方式</p>
+        <p class="error-field" ng-show="maintainForm.address.$dirty && maintainForm.address.$invalid || maintainForm.address.$pristine && submitted">请输入正确格式的维修地址</p>
+    </div>
+    <button type="button" class="login-btn" ng-disabled="loginForm.$invalid" ng-click="submit()">确认预约</button>
+
+</form>

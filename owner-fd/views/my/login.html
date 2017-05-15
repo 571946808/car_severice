@@ -1,0 +1,18 @@
+<div class="header">
+    <h3>登录</h3>
+</div>
+<form action="" class="login-form" name="loginForm" novalidate>
+    <div class="input-group">
+        <input type="text" class="username" name="user" ng-model="telphone" placeholder="手机号" required ng-pattern="/^[1]{1}[34578]{1}[0-9]{9}$/">
+        <input type="password" name="password" ng-model="password" placeholder="请输入6-16位密码" ng-minlength="6" ng-maxlength="16" required>
+    </div>
+    <div class="error">
+        <p class="error-field" ng-show="loginForm.user.$dirty && loginForm.user.$invalid">请输入用户名</p>
+        <p class="error-field" ng-show="loginForm.password.$dirty && loginForm.password.$invalid">请输入正确格式的密码</p>
+    </div>
+    <button type="button" class="login-btn" ng-disabled="loginForm.$invalid" ng-click="submit()">登&nbsp;录</button>
+    <div class="help-link clearfix">
+        <a href="" ui-sref="register">立即注册</a>
+        <a href="" ui-sref="register" class="find-pwd">找回密码</a>
+    </div>
+</form>

@@ -1,0 +1,12 @@
+<div ng-include="'views/partial/header.html'"></div>
+<div class="title">
+    <p>公告信息</p>
+</div>
+<div class="list">
+    <ul class="message" data-ng-init="load()">
+        <li ng-repeat="item in formData">
+            <p>{{item.message}}</p>
+            <p>{{item.creattime}}</p>
+        </li>
+    </ul>
+</div>

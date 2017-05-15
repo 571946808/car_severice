@@ -1,0 +1,48 @@
+<div ng-include="'views/partial/header.html'"></div>
+<form action="" class="maintain-form" name="publicMaintainForm" novalidate>
+    <div class="input-group">
+        <label>联系人</label>
+        <input type="text" name="ownername" ng-model="formData.ownername" required>
+    </div>
+    <div class="input-group">
+        <label>联系电话</label>
+        <input type="text" class="username" name="telephone" ng-model="formData.telphone" required ng-pattern="/^[1]{1}[34578]{1}[0-9]{9}$/">
+    </div>
+    <div class="input-group">
+        <label>报修地址</label>
+        <input type="text" name="address" ng-model="formData.address" required>
+    </div>
+    <div class="input-group">
+        <p class="describe-title">报修描述</p>
+        <textarea class="maintain-describe" name="" ng-model="formData.description"></textarea>
+    </div>
+    <!-- <div class="image-wrapper">
+       <i class="fa fa-image" ng-click="chooseImg()">选择文件</i>
+       <input class="image-upload" type="file">
+       <input class="image-upload" type="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" multiple="multiple"> 
+    </div> -->
+    <!-- <div>
+        <div ng-repeat="item in thumb">
+            <label>
+                <img class="img-preview" ng-src="{{item.imgSrc}}"/>
+            </label>
+            <span ng-if="item.imgSrc" ng-click="img_del($index)"></span>
+        </div>
+        <div ng-repeat="item in thumb_default">
+            <label>
+                <input type="file" id="one-input" accept="image/*" file-model="images" onchange="angular.element(this).scope().img_upload(this.files)"/>
+            </label>
+        </div>
+    </div> -->
+    <input type="file" file-model="myFile"/>
+    <div class="col-md-12">
+        <img ng-src="{{imageSrc}}" style="max-width:6rem;max-height:6rem;margin:0 auto;display:inline-block;" />
+    </div>
+    <div class="error">
+        <p class="error-field" ng-show="maintainForm.ownername.$dirty && maintainForm.ownername.$invalid || maintainForm.ownername.$pristine && submitted">请输入用户名</p>
+        <p class="error-field" ng-show="maintainForm.telephone.$dirty && maintainForm.telephone.$invalid || maintainForm.telephone.$pristine && submitted">请输入正确格式的密码</p>
+        <p class="error-field" ng-show="maintainForm.address.$dirty && maintainForm.address.$invalid || maintainForm.address.$pristine && submitted">请输入正确格式的密码</p>
+    </div>
+    <button type="button" class="login-btn" ng-disabled="loginForm.$invalid" ng-click="submit()">确认报修</button>
+
+</form>

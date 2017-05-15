@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <img src="public/img/photo1.jpg" class="header-img" alt="">
+            </div>
+            <div class="col-sm-3">
+                <div class="panel-group table-responsive" role="tablist">
+                    <div class="panel panel-primary leftMenu">
+                        <div class="panel-heading" id="collapseListGroupHeading1" data-toggle="collapse" data-target="#collapseListGroup1" role="tab" >
+                            <h4 class="panel-title">
+                                个人信息
+                                <span class="glyphicon glyphicon-chevron-down right"></span>
+                            </h4>
+                        </div>
+                        <div id="collapseListGroup1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading1">
+                            <ul class="list-group">
+                              <li class="list-group-item">
+                                <a href="#/sever">
+                                    <span class="glyphicon glyphicon-triangle-right"></span>查看信息
+                                </a>
+                              </li>
+                              <li class="list-group-item">
+                                <a href="#/severPassword">
+                                    <span class="glyphicon glyphicon-triangle-right"></span>修改密码
+                                </a>
+                              </li>
+                            </ul>
+                        </div>
+                    </div>  
+                    <div class="panel panel-primary leftMenu">
+                        <!-- 利用data-target指定要折叠的分组列表 -->
+                        <div class="panel-heading" id="collapseListGroupHeading3" data-toggle="collapse" data-target="#collapseListGroup3" role="tab" >
+                            <h4 class="panel-title">
+                                查看流水单
+                                <span class="glyphicon glyphicon-chevron-up right"></span>
+                            </h4>
+                        </div>
+                        <div id="collapseListGroup3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="collapseListGroupHeading3">
+                            <ul class="list-group">
+                              <li class="list-group-item">
+                                <!-- 利用data-target指定URL -->
+                                <a href="#/severNo">
+                                    <span class="glyphicon glyphicon-triangle-right"></span>未处理
+                                </a>
+                              </li>
+                              <li class="list-group-item">
+                                <a href="#/severIng">
+                                    <span class="glyphicon glyphicon-triangle-right"></span>正在处理
+                                </a>
+                              </li>
+                            </ul>
+                        </div>
+                    </div><!--panel end-->
+                    <div class="panel panel-primary leftMenu">
+                        <div class="panel-heading" id="collapseListGroupHeading2" data-toggle="collapse" data-target="#collapseListGroup2" role="tab" >
+                            <h4 class="panel-title">
+                                维修
+                                <span class="glyphicon glyphicon-chevron-down right"></span>
+                            </h4>
+                        </div>
+                        <div id="collapseListGroup2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading2">
+                            <ul class="list-group">
+                              <li class="list-group-item">
+                                <a href="#/severAlready">
+                                    <span class="glyphicon glyphicon-triangle-right"></span>维修历史
+                                </a>
+                              </li>
+                            </ul>
+                        </div>
+                    </div> 
+                    <div class="panel panel-primary leftMenu">
+                        <div class="panel-heading" id="collapseListGroupHeading4" data-toggle="collapse" data-target="#collapseListGroup4" role="tab" >
+                            <h4 class="panel-title">
+                                退出
+                                <span class="glyphicon glyphicon-chevron-down right"></span>
+                            </h4>
+                        </div>
+                        <div id="collapseListGroup4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading4">
+                            <ul class="list-group">
+                              <li class="list-group-item">
+                                <a href="#/home">
+                                    <span class="glyphicon glyphicon-triangle-right"></span>退出登录
+                                </a>
+                              </li>
+                            </ul>
+                        </div>
+                    </div>   
+                </div>
+            </div>
+            <div class="col-sm-9">
+                <div class="panel panel-primary margin-top-15">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">未处理</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form action="" class="form-horizontal">
+                            <table class="table table-hover table-bordered margin-top-15">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>车牌号</th>
+                                        <th>型号</th>
+                                        <th>品牌</th>
+                                        <th>日期</th>
+                                        <!-- <th>检验员</th>
+                                        <th>零件费用</th>
+                                        <th>维修费用</th> -->
+                                        <th>状态</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody data-ng-init="load()">
+                                    <tr ng-repeat="item in formData">
+                                        <td>{{item.id}}</td>
+                                        <td>{{item.chepaihao}}</td>
+                                        <td>{{item.xinghao}}</td>
+                                        <td>{{item.pinpai}}</td>
+                                        <td>{{item.date}}</td>
+                                        <!-- <td>{{item.jianyanyuan}}</td>
+                                        <td>{{item.lingjian}}</td>
+                                        <td>{{item.weixiu}}</td> -->
+                                        <td>{{item.status == '1'?'未处理': ''}}</td>
+                                        <td><a href="" ng-click="repair(item.id)">维修</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

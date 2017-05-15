@@ -1,0 +1,40 @@
+<div ng-include="'views/partial/header.html'"></div>
+<form action="" name="authenticateForm" class="authenticate-form">
+    <div class="input-group">
+        <label>业主姓名</label>
+        <input type="text" placeholder="请输入您的姓名" ng-model="formData.ownername" name="name" required>
+    </div>
+    <div class="input-group">
+        <label>住房城市</label>                  
+        <input type="hidden" name="contact_province_code" data-id="0001" id="contact_province_code" value="" data-province-name="">
+        <input type="hidden" name="contact_city_code" id="contact_city_code" value="" data-city-name="">
+        <input type="hidden" ng-model="formData.city">
+        <span class="iosselect" data-city-code="" data-province-code="" data-district-code="" id="show_contact" ng-model="formData.city" name="city" ng-click="selectArea()">请选择您的住房城市<span>
+    </div>
+    <div class="input-group">
+        <label>小区名</label>
+        <input type="text" placeholder="请输入您的小区名" ng-model="formData.residence_name" name="residenceName" required>
+    </div>
+    <div class="input-group">
+        <label>楼栋</label>
+        <input type="text" placeholder="请输入您的楼栋" ng-model="formData.unit" name="name" required>
+    </div>
+    <div class="input-group">
+        <label>门牌号</label>
+        <input type="text" placeholder="请输入您的门牌号" ng-model="formData.house_num" name="houseNum" required>
+    </div>
+    <div class="input-group">
+        <label>身份证号</label>
+        <input type="text" placeholder="请输入您的身份证号" ng-model="formData.id_num" name="idNum" ng-pattern="/(^\d{15}$)|(^\d{17}([0-9]|X)$)/" required>
+    </div>
+    <div class="error">
+        <p class="error-field" ng-show="authenticateForm.name.$dirty && authenticateForm.name.$invalid">请输入业主姓名</p>
+        <p class="error-field" ng-show="authenticateForm.city.$dirty && authenticateForm.city.$invalid">请输入住房城市</p>
+        <p class="error-field" ng-show="authenticateForm.residenceName.$dirty && authenticateForm.residenceName.$invalid">请输入小区名</p>
+        <p class="error-field" ng-show="authenticateForm.unit.$dirty && authenticateForm.unit.$invalid">请输入楼栋</p>
+        <p class="error-field" ng-show="authenticateForm.houseNum.$dirty && authenticateForm.houseNum.$invalid">请输入门牌号</p>
+        <p class="error-field" ng-show="authenticateForm.idNum.$dirty && authenticateForm.idNum.$invalid">请输入身份证号</p>
+    </div>
+    <button type="button"  class="submit-btn" ng-disabled="authenticateForm.$invalid" ng-click="submit()">完成</button>
+</form>
+

@@ -1,0 +1,17 @@
+<div class="footer" ng-controller="footerController">
+	<ul class="nav">
+		<li ng-class="{active:'home' == currentTab}">
+			<a ui-sref="home" ng-click="changeTab('home')">首页</a>
+		</li>
+		<li ng-class="{active:'neighbor' == currentTab}">
+			<a ui-sref="neighbor" ng-click="changeTab('neighbor')">邻里之间</a>
+		</li>
+		<li ng-class="{active:'report' == currentTab}">
+			<a ui-sref="report" ng-click="changeTab('report')">意见反馈</a>
+		</li>
+		<li ng-class="{active:'my' == currentTab}">
+			<a ui-sref="my" ng-click="changeTab('my')">我是业主</a>
+		</li>
+		<div style="clear: both;"></div>
+	</ul>
+</div>

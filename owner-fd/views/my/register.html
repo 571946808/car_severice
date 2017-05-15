@@ -1,0 +1,47 @@
+<div ng-include="'views/partial/header.html'"></div>
+<form action="" class="register-form" ng-show="isShow1" name="formOne"
+  novalidate>
+    <div class="input-group">
+        <div class="mobile-group">
+            <input type="text" name="mobileInput" ng-model="mobile" placeholder="手机号" ng-pattern="/^[1]{1}[34578]{1}[0-9]{9}$/" ng-blur="mobileCode()" required>
+        </div>
+        <div class="picCode-group clearfix">
+            <input type="text" class="pic-code" ng-model="picCode" placeholder="图片验证码"   ng-blur="imgCode()" required>
+            <img class="img" src="{{picCodeUrl}}" alt="" ng-click="refresh()">
+        </div>
+        <div class="sms-code-group clearfix">
+            <input type="text" class="sms-code" ng-model="SMSCode" placeholder="短信验证码" required>
+            <button type="button" class="btn-sms" ng-click="getSMSCode()"  ng-disabled="phoneNoCheck || imgNoCheck">{{btnSMSText}}</button>
+        </div>
+    </div>
+    <div class="error">
+        <p class="error-field" ng-show="formOne.mobileInput.$dirty && formOne.mobileInput.$invalid">请输入正确的手机号
+        </p>
+        <p class="error-field" ng-show="formOne.mobileInput.$error.minlength||
+            formOne.mobileInput.$error.maxlength">请输入正确的手机号
+        </p>
+    </div>
+    <button class="confirm-btn" ng-disabled="formOne.$invalid" ng-click="next()" type="button" >下&nbsp;一&nbsp;步</button>
+</form>
+<form action="" class="register-form" ng-show="isShow2" name="formtwo" novalidate>
+    <div class="input-group">
+        <div class="mobile-group">
+            <input type="text" class="mobile" ng-model="mobile" placeholder="手机号" disabled="true">
+        </div>
+        <div class="password-group">
+            <input type="password" class="password" ng-model="passwordInput" placeholder="请输入6-16位密码" name="passwordInput" ng-minlength="6" ng-maxlength="16" id="passwordInput" required>
+        </div>
+        <div class="passwordagin-group">
+            <input type="password" class="passwordagin" ng-model="passwordaginInput" name="passwordaginInput" placeholder="请再次输入密码" id="passwordaginInput" required>
+        </div>
+    </div>
+    <div class="error">
+       <p class="error-field" ng-show="formtwo.passwordInput.$invalid && formtwo.passwordInput.$error.required">请输入密码
+        </p>
+        <p class="error-field" ng-show="formtwo.passwordInput.$error.minlength||
+            formtwo.passwordInput.$error.maxlength">密码不符合要求，请重新输入
+        </p>
+        <p class="error-field" ng-show="passwordaginInput != passwordInput">两次密码输入不一致</p>
+    </div>
+    <button type="button" class="confirm-btn" ng-disabled="formtwo.$invalid" ng-click="submit()">注&nbsp;册</button>
+</form> 

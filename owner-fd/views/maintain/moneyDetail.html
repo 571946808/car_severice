@@ -1,0 +1,28 @@
+<div ng-include="'views/partial/header.html'"></div>
+<div data-ng-init="load()">
+    <div ng-repeat="item in formData">
+        <div class="title">
+            {{item.type}}
+        </div>
+        <table>
+            <tr>
+                <td>收费项目</td>
+                <td>{{item.project}}</td>
+            </tr>
+            <tr>
+                <td>收费期间</td>
+                <td>{{item.creattime}}</td>
+            </tr>
+            <tr>
+                <td>本次缴费</td>
+                <td>{{item.money}}</td>
+            </tr>
+            <tr>
+                <td>备注</td>
+                <td>{{item.description}}</td>
+            </tr>
+        </table>
+        <a href="#/saomiao" class="btn">没问题，确认缴费</a>
+        <a href="#/fankui?id={{item.id}}" class="btn">有问题，我要反馈</a>
+    </div>
+</div>

@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-size: 10px; }
+
+@media (min-device-width: 375px) {
+  html {
+    font-size: 12px; } }
+@media (min-device-width: 414px) {
+  html {
+    font-size: 15px; } }
+@media (min-device-width: 768px) {
+  html {
+    font-size: 20px; } }
+a {
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(255, 0, 0, 0); }
+
+/*__clearfix
+--------------------------------------------------------------------------------------------*/
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0; }
+
+* html .clearfix {
+  zoom: 1; }
+
+/* IE6 */
+*:first-child + html .clearfix {
+  zoom: 1; }
+
+/* IE7 */
+.header {
+  background-color: #38A2FA;
+  color: #ffffff;
+  height: 4rem;
+  line-height: 4rem; }
+  .header h3 {
+    text-align: center; }
+  .header a {
+    color: #ffffff;
+    position: absolute;
+    left: 1rem; }
+
+.footer {
+  background: #f0f0f0;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%; }
+  .footer ul {
+    border-top: 1px solid #ccc; }
+    .footer ul li {
+      list-style: none;
+      width: 25%;
+      height: 4rem;
+      line-height: 4rem;
+      float: left;
+      text-align: center;
+      font-size: 1.3rem; }
+      .footer ul li a {
+        color: #333; }
+      .footer ul li a:hover {
+        color: #38A2FA; }
+      .footer ul li a:active {
+        color: #38A2FA; }
+
+body {
+  font-family: "Microsoft Yahei";
+  background: #f0f0f0; }
+
+.error-field {
+  margin-top: 1rem;
+  margin-left: 2rem;
+  color: red;
+  font-size: 1.2rem; }
+
+/*# sourceMappingURL=index.css.map */

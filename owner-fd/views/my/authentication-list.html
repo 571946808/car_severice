@@ -1,0 +1,6 @@
+<div ng-include="'views/partial/header.html'"></div>
+<ul class="clearfix house-list">
+    <li ng-repeat="x in list" class="house-item">
+        <a ui-sref="authenticationEdit({id: {{x.id}}})">{{x.residence_name}}&nbsp;{{x.unit}}<i class="fa fa-chevron-right right"></i></a>
+    </li></ul>
+<a ui-sref="authenticationAdd" class="add-anthentication">认证其他住房</a>

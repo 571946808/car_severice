@@ -1,0 +1,14 @@
+<div ng-include="'views/partial/header.html'"></div>
+<form action="" class="login-form" name="loginForm" novalidate>
+    <div class="input-group">
+        <input type="password" name="password1" ng-model="password1" placeholder="请输入6-16位新密码" ng-minlength="6" ng-maxlength="16" required>
+    </div>
+    <div class="input-group">
+        <input type="password" name="password2" ng-model="password2" placeholder="请再次输入新密码" ng-minlength="6" ng-maxlength="16" required>
+    </div>
+    <div class="error">
+        <p class="error-field" ng-show="loginForm.password1.$dirty && loginForm.password1.$invalid || loginForm.password1.$pristine && submitted">请输入正确格式的密码</p>
+        <p class="error-field" ng-show="loginForm.password1.$dirty && loginForm.password2.$dirty && loginForm.password1 != loginForm.password2">两次密码输入不一致</p>
+    </div>
+    <button type="button" class="login-btn" ng-disabled="loginForm.$invalid" ng-click="submit()">保&nbsp;存</button>
+</form>

@@ -1,0 +1,15 @@
+<div ng-include="'views/partial/header.html'"></div>
+<div class="main">
+    <div>
+        <ul class="message" data-ng-init="load()">
+            <li ng-repeat="item in formData">
+                <p class="name">访客姓名：{{item.visitor}}</p>
+                <p>联系方式：{{item.phone}}</p>
+                <p>来访时间：{{item.timestart}}</p>
+                <p>授权时间：{{item.timeend}}</p>
+                <p>备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注：{{item.description}}</p>
+                <p>授权码：{{item.code}}</p>
+            </li>
+        </ul>
+    </div>
+</div>

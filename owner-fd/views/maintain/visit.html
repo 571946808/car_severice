@@ -1,0 +1,29 @@
+<div ng-include="'views/partial/header.html'"></div>
+<form action="" class="main-form" name="mainForm" novalidate>
+    <div class="input-group">
+        <label>访客姓名</label>
+        <input type="text" name="ownername" ng-model="formData.ownername" required>
+    </div>
+    <div class="input-group">
+        <label>访客电话</label>
+        <input type="text" class="username" name="telephone" ng-model="formData.telphone" required ng-pattern="/^[1]{1}[34578]{1}[0-9]{9}$/">
+    </div>
+    <div class="input-group">
+        <label>来访时间</label>
+        <input type="text" id="timepickerstart" readonly="" name="input_datestart" ng-model="formData.timestart"/>
+    </div>
+    <div class="input-group">
+        <label>授权时间</label>
+        <input type="text" id="timepickerend" readonly="" name="input_dateend" ng-model="formData.timeend"/>
+    </div>
+    <div class="input-group">
+        <p class="describe-title">备注</p>
+        <textarea class="main-describe" name="" ng-model="formData.description"></textarea>
+    </div>
+    <div class="error">
+        <p class="error-field" ng-show="mainForm.ownername.$dirty && mainForm.ownername.$invalid || mainForm.ownername.$pristine && submitted">请输入访客姓名</p>
+        <p class="error-field" ng-show="mainForm.telephone.$dirty && mainForm.telephone.$invalid || mainForm.telephone.$pristine && submitted">请输入正确格式的联系方式</p>
+    </div>
+    <button type="button" ng-click="submit()">确认授权</button>
+
+</form>

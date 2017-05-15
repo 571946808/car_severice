@@ -1,0 +1,12 @@
+<div ng-include="'views/partial/header.html'"></div>
+<div class="main">
+    <div>
+        <ul class="message" data-ng-init="load()">
+            <li ng-repeat="item in formData">
+                <p class="name">缴费类型：{{item.type}}</p>
+                <p>缴费金额：{{item.money}}</p>
+                <p>缴费时间：{{item.creattime}}</p>
+            </li>
+        </ul>
+    </div>
+</div>
