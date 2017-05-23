@@ -26,20 +26,7 @@
             'severSetForm': site.website + '/owner-bd/index.php/Home/Car/severSetForm',
             'severGetForm': site.website + '/owner-bd/index.php/Home/Car/severGetForm',
             'getComment': site.website + '/owner-bd/index.php/Home/Car/getComment',
-            'setComment': site.website + '/owner-bd/index.php/Home/Car/setComment',
-    		'messageAdd': site.website + '/owner-bd/index.php/Home/Identify/messageAdd',
-    		//authentication-list
-    		'messageList': site.website + '/owner-bd/index.php/Home/Identify/messageList',
-    		//authentication-edit
-    		'messageSkip': site.website + '/owner-bd/index.php/Home/Identify/messageSkip',
-    		'messageEdit': site.website + '/owner-bd/index.php/Home/Identify/messageEdit',
-    		//register
-    		'mobileVerify': site.website + '/owner-bd/index.php/Home/Register/mobileVerify',
-    		'checkPicCode': site.website + '/owner-bd/index.php/Home/CheckCode/checkPicCode',
-    		'getSMSCode': site.website + '/owner-bd/index.php/Home/SMS/getSMSCode',
-    		'checkSMSCode': site.website + '/owner-bd/index.php/Home/SMS/checkSMSCode',
-    		'getPicCode': site.website + '/owner-bd/index.php/Home/CheckCode/getPicCode',
-    		'register': site.website + '/owner-bd/index.php/Home/Register/register'
+            'setComment': site.website + '/owner-bd/index.php/Home/Car/setComment'
             
     	}
     }

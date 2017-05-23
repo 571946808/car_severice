@@ -50,8 +50,15 @@ class CarController extends Controller{
         $cars = D('cars');
         $id = $_SESSION['user_id'];
         $carid = $_POST['carid'];
-        $status = '1';
-        $service = $cars->where("id='$carid'")->setField('status',$status);
+        $status = $_POST['status'];
+        $type = $_POST['type'];
+        $apply = $_POST['apply'];
+
+        $data['status'] = $status;
+        $data['type'] = $type;
+        $data['apply'] = $apply;
+        dump($type[0]);
+        $service = $cars->where("id='$carid'")->setField($data);
 
         if($service){
             $result = array(
@@ -72,7 +79,7 @@ class CarController extends Controller{
         $cars = D('cars');
         $id = $_SESSION['user_id'];
         $carid = $_POST['carid'];
-        $status = '2';
+        $status = $_POST['status'];
         $data['severid'] = $id;
         $data['status'] = $status;
         $service = $cars->where("id='$carid'")->setField($data);
@@ -96,7 +103,7 @@ class CarController extends Controller{
         $cars = D('cars');
         $id = $_SESSION['user_id'];
         // $status = '3';
-        $service = $cars->where("userid='$id' AND (status=1 OR status=2)")->select();
+        $service = $cars->where("userid='$id' AND (status=1 OR status=2 OR status=4 OR status=5)")->select();
 
         if($service){
             $result = array(
@@ -115,8 +122,9 @@ class CarController extends Controller{
 
     public function getNoCar(){
         $cars = D('cars');
-        $status = '1';
-        $service = $cars->where("status='$status'")->select();
+        $status1 = '1';
+        $status2 = '4';
+        $service = $cars->where("status='$status1' OR status='$status2'")->select();
 
         if($service){
             $result = array(
@@ -136,8 +144,9 @@ class CarController extends Controller{
     public function getIngCar(){
         $cars = D('cars');
         $id = $_SESSION['user_id'];
-        $status = '2';
-        $service = $cars->where("severid='$id' AND status='$status'")->select();
+        $status1 = '2';
+        $status2 = '5';
+        $service = $cars->where("severid='$id' AND (status='$status1' OR status='$status2')")->select();
 
         if($service){
             $result = array(
@@ -157,8 +166,9 @@ class CarController extends Controller{
     public function getReady(){
         $cars = D('cars');
         $id = $_SESSION['user_id'];
-        $status = '3';
-        $service = $cars->where("userid='$id' AND status='$status'")->select();
+        $status1 = '3';
+        $status2 = '6';
+        $service = $cars->where("userid='$id' AND (status='$status1' OR status='$status2')")->select();
 
         if($service){
             $result = array(
@@ -220,7 +230,7 @@ class CarController extends Controller{
         }else{
               $result = array(
                   'code'=> '1',
-                  'errMsg'=> '保存失败'
+                  'errMsg'=> '保存成功'
               );
               echo json_encode($result,JSON_UNESCAPED_UNICODE);
         }

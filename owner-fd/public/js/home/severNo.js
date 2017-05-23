@@ -19,11 +19,12 @@ angular.module('sunApp').controller('severNoController', function ($scope,$rootS
             console.error('ajax失败');    
         });
     }
-    $scope.repair = function(id){
+    $scope.repair = function(id,item){
         var r=confirm("确定进行维修吗？")
         if (r == true){
             var param = {
-                carid: id
+                carid: id,
+                status: item
             }
             $http({
                 method:'POST',
@@ -52,5 +53,8 @@ angular.module('sunApp').controller('severNoController', function ($scope,$rootS
                 console.error('ajax失败');    
             });
         }
+    }
+    $scope.look = function(type, apply){
+        alert('服务项目：'+type+ '\n' + '服务详情：' +apply)
     }
 });

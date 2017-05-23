@@ -19,38 +19,44 @@ angular.module('sunApp').controller('repairController', function ($scope,$rootSc
             console.error('ajax失败');    
         });
     }
-    $scope.repair = function(id){
-        var r=confirm("确定进行维修吗？")
-        if (r == true){
-            var param = {
-                carid: id
-            }
-            $http({
-                method:'POST',
-                url: api_Data.My.setRepairCar,
-                headers:{
-                    'Content-Type':'application/x-www-form-urlencoded'
-                },
-                dataType: 'json',
-                data: $httpParamSerializer(param)
-            }).then(function successCallback(response){
-                if(response.data.code == 0){
-                    layer.open({
-                        content: '切换成功',
-                        skin: 'msg',
-                        time: 2 
-                    });
-                    $state.go('no');
-                }else{
-                    layer.open({
-                        content: '切换失败，请重新操作',
-                        skin: 'msg',
-                        time: 2 
-                    });
-                }
-            }, function errorCallback(response) {
-                console.error('ajax失败');    
-            });
+    $scope.repair = function(id, item){
+        var ty = $scope.formData.type,
+        str = "";
+        for (var Key in ty){
+            str += ty[Key]+' ';
         }
+        var param = {
+            carid: id,
+            status: item,
+            type: str,
+            apply: $scope.formData.apply
+        };
+        $http({
+            method:'POST',
+            url: api_Data.My.setRepairCar,
+            headers:{
+                'Content-Type':'application/x-www-form-urlencoded'
+            },
+            dataType: 'json',
+            data: $httpParamSerializer(param)
+        }).then(function successCallback(response){
+            if(response.data.code == 0){
+                layer.open({
+                    content: '切换成功',
+                    skin: 'msg',
+                    time: 2 
+                });
+                $state.go('no');
+            }else{
+                layer.open({
+                    content: '切换成功!',
+                    skin: 'msg',
+                    time: 2 
+                });
+                $state.go('no');
+            }
+        }, function errorCallback(response) {
+            console.error('ajax失败');    
+        });
     }
 });

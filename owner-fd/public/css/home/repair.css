@@ -1,0 +1,6 @@
+.modal-backdrop {
+    z-index: -1 !important;
+}
+textarea{
+    padding: 5px 6px;
+}

@@ -51,7 +51,7 @@
                               </li>
                               <li class="list-group-item">
                                 <a href="#/already">
-                                    <span class="glyphicon glyphicon-triangle-right"></span>维修历史
+                                    <span class="glyphicon glyphicon-triangle-right"></span>维修保养历史
                                 </a>
                               </li>
                             </ul>
@@ -60,7 +60,7 @@
                     <div class="panel panel-primary leftMenu">
                         <div class="panel-heading" id="collapseListGroupHeading4" data-toggle="collapse" data-target="#collapseListGroup4" role="tab" >
                             <h4 class="panel-title">
-                                维修
+                                维修保养
                                 <span class="glyphicon glyphicon-chevron-down right"></span>
                             </h4>
                         </div>
@@ -118,7 +118,7 @@
             <div class="col-sm-9">
                 <div class="panel panel-primary margin-top-15">
                     <div class="panel-heading">
-                        <h3 class="panel-title">维修历史</h3>
+                        <h3 class="panel-title">维修保养历史</h3>
                     </div>
                     <div class="panel-body">
                         <form action="" class="form-horizontal">
@@ -132,7 +132,7 @@
                                         <th>日期</th>
                                         <th>检验员</th>
                                         <th>零件费用</th>
-                                        <th>维修费用</th>
+                                        <th>维修(保养)费用</th>
                                         <th>状态</th>
                                         <th>操作</th>
                                     </tr>
@@ -147,7 +147,7 @@
                                         <td>{{item.jianyanyuan}}</td>
                                         <td>{{item.lingjian}}</td>
                                         <td>{{item.weixiu}}</td>
-                                        <td>{{item.status == '3'?'已修理': ''}}</td>
+                                        <td>{{item.status == '3'?'已维修': '已保养'}}</td>
                                         <td><a href="javascript:;" ng-click="look(item.description)">查看</a>&nbsp;&nbsp;<a href="#/check?id={{item.id}}">留言</a></td>
                                     </tr>
                                 </tbody>

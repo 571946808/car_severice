@@ -51,7 +51,7 @@
                               </li>
                               <li class="list-group-item">
                                 <a href="#/already">
-                                    <span class="glyphicon glyphicon-triangle-right"></span>维修历史
+                                    <span class="glyphicon glyphicon-triangle-right"></span>维修保养历史
                                 </a>
                               </li>
                             </ul>
@@ -60,7 +60,7 @@
                     <div class="panel panel-primary leftMenu">
                         <div class="panel-heading" id="collapseListGroupHeading4" data-toggle="collapse" data-target="#collapseListGroup4" role="tab" >
                             <h4 class="panel-title">
-                                维修
+                                维修保养
                                 <span class="glyphicon glyphicon-chevron-down right"></span>
                             </h4>
                         </div>
@@ -121,7 +121,6 @@
                         <h3 class="panel-title">查看车辆</h3>
                     </div>
                     <div class="panel-body">
-                        <form action="" class="form-horizontal">
                             <table class="table table-hover table-bordered margin-top-15">
                                 <thead>
                                     <tr>
@@ -140,11 +139,93 @@
                                         <td>{{item.pinpai}}</td>
                                         <td>{{item.chandi}}</td>
                                         <td>{{item.date}}</td>
-                                        <td><a href="javascript:;" ng-click="repair(item.id)">维修</a></td>
-                                    </tr>
+                                        <td>
+                                            <a href="" data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-xs">维修</a>
+                                            <a href="" data-toggle="modal" data-target="#myModal1" class="btn btn-primary btn-xs">保养</a>
+
+                                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+                                          <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                              <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <h4 class="modal-title" id="exampleModalLabel">维修选择</h4>
+                                              </div>
+                                              <div class="modal-body">
+                                                <form class="form-horizontal">
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" ng-true-value="'发动机维修'" ng-model="formData.type.weixiu1">
+                                                            发动机维修
+                                                        </label>
+                                                        <label>
+                                                            <input type="checkbox" ng-true-value="'变速器维修'" ng-model="formData.type.weixiu2">
+                                                            变速器维修
+                                                        </label>
+                                                        <label>
+                                                            <input type="checkbox" ng-true-value="'四轮定位'" ng-model="formData.type.weixiu3">
+                                                            四轮定位
+                                                        </label>
+                                                        <label>
+                                                            <input type="checkbox" ng-true-value="'保险杠维修'" ng-model="formData.type.weixiu4">
+                                                            保险杠维修
+                                                        </label>
+                                                        <label>
+                                                            <input type="checkbox" ng-true-value="'车灯维修'" ng-model="formData.type.weixiu5">
+                                                            车灯维修
+                                                        </label>
+                                                        <label>
+                                                            <input type="checkbox" ng-true-value="'制动维修'" ng-model="formData.type.weixiu6">
+                                                            制动维修
+                                                        </label>
+                                                    </div>
+                                                    <textarea name="" id="" cols="75" rows="6"  ng-model="formData.apply"></textarea>
+                                                </form>
+                                              </div>
+                                              <div class="modal-footer">
+                                                <button type="button" class="btn btn-primary" ng-click="repair(item.id,1)"  data-dismiss="modal">保存</button>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+                                          <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                              <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <h4 class="modal-title" id="exampleModalLabel">保养选择</h4>
+                                              </div>
+                                              <div class="modal-body">
+                                                <form class="form-horizontal">
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" ng-true-value="'车身美容'" ng-model="formData.type.weixiu1">
+                                                            车身美容
+                                                        </label>
+                                                        <label>
+                                                            <input type="checkbox" ng-true-value="'内饰美容'" ng-model="formData.type.weixiu2">
+                                                            内饰美容
+                                                        </label>
+                                                        <label>
+                                                            <input type="checkbox" ng-true-value="'漆面处理'" ng-model="formData.type.weixiu3">
+                                                            漆面处理
+                                                        </label>
+                                                    </div>
+                                                    <textarea name="" id="" cols="75" rows="6"  ng-model="formData.apply"></textarea>
+                                                </form>
+                                              </div>
+                                              <div class="modal-footer">
+                                                <button type="button" class="btn btn-primary" ng-click="repair(item.id,4)"  data-dismiss="modal">保存</button>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        </td>
+                                    </tr>                                 
                                 </tbody>
                             </table>
-                        </form>
                     </div>
                 </div>
             </div>

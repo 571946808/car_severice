@@ -4,7 +4,7 @@ Source Host: localhost
 Source Database: car
 Target Host: localhost
 Target Database: car
-Date: 2017/5/15 9:27:18
+Date: 2017/5/22 8:08:50
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -20,15 +20,17 @@ CREATE TABLE `car_cars` (
   `pinpai` varchar(20) DEFAULT NULL,
   `chandi` varchar(20) DEFAULT NULL,
   `date` date DEFAULT NULL,
-  `status` varchar(10) DEFAULT '未处理',
+  `status` varchar(10) DEFAULT NULL,
   `jianyanyuan` varchar(20) DEFAULT NULL,
   `lingjian` varchar(20) DEFAULT '0.0',
   `weixiu` varchar(20) DEFAULT '0.0',
   `description` varchar(500) DEFAULT NULL,
   `severid` int(10) DEFAULT NULL,
   `comment` varchar(500) DEFAULT NULL,
+  `type` varchar(100) DEFAULT NULL,
+  `apply` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for car_person
@@ -63,11 +65,12 @@ CREATE TABLE `car_sever` (
 -- ----------------------------
 -- Records 
 -- ----------------------------
-INSERT INTO `car_cars` VALUES ('9', '1', 'A2132', '大型', '奥迪', '山西', '2017-05-08', '3', '杨罡', '1000.0', '200.0', '车灯100元，倒车镜100元，钢管200元，自动车床600元', '1', '服务很好，不过有点贵，希望下次能改进！');
-INSERT INTO `car_cars` VALUES ('10', '1', 'B2132', '中型', '红旗', '吉林', '2017-05-01', '2', '杨罡', '100.0', '100.0', '排气筒100元', '1', null);
-INSERT INTO `car_cars` VALUES ('11', '1', 'C3133', '微型', '宝马', '上海', '2017-04-30', '2', null, '0.0', '0.0', null, '1', null);
-INSERT INTO `car_cars` VALUES ('12', '1', 'D2312', '中小型', '陆虎', '安徽', '2017-05-02', '1', null, '0.0', '0.0', null, null, null);
-INSERT INTO `car_cars` VALUES ('13', '1', 'E2312', '大型', '奔驰', '山东', '2017-05-09', '0', null, '0.0', '0.0', null, null, null);
-INSERT INTO `car_cars` VALUES ('14', '1', 'F2133', '中型', '本田', '日本', '2017-05-16', '0', null, '0.0', '0.0', null, null, null);
+INSERT INTO `car_cars` VALUES ('18', '1', '4', '4', '4', '4', '2017-05-01', '1', null, '0.0', '0.0', null, null, null, '发动机维修 制动维修 ', '1234124123');
+INSERT INTO `car_cars` VALUES ('19', '1', '5', '5', '5', '5', '2017-05-02', '2', '杨罡', '100.0', '100.0', '发动机50元，四轮30元，其余20元', '1', null, '发动机维修 变速器维修 四轮定位 ', '发动机什么鬼，变速器什么鬼，四轮定位');
+INSERT INTO `car_cars` VALUES ('20', '1', '6', '6', '6', '6', '2017-05-02', '0', null, '0.0', '0.0', null, null, null, '发动机维修 制动维修 ', '王企鹅群翁群无');
+INSERT INTO `car_cars` VALUES ('21', '1', '7', '7', '7', '7', '2017-05-01', '0', null, '0.0', '0.0', null, null, null, '{\"weixiu1\":true}', '王企鹅群翁群无');
+INSERT INTO `car_cars` VALUES ('15', '1', '1', '1', '1', '1', '2017-05-01', '2', '杨罡', '100.0', '200.0', '车灯100元', '1', null, null, null);
+INSERT INTO `car_cars` VALUES ('16', '1', '2', '2', '2', '2', '2017-05-01', '6', '杨罡', '100.0', '200.0', '垫子100元', '1', '服务不错！价格公道！请我吃饭！', null, null);
+INSERT INTO `car_cars` VALUES ('17', '1', '3', '3', '3', '3', '2017-05-02', '1', null, '0.0', '0.0', null, null, null, '{\"weixiu1\":true}', '312321312');
 INSERT INTO `car_person` VALUES ('1', 'yanggang', '123123', '杨罡', '男', '1234567891234567', '12745674567');
 INSERT INTO `car_sever` VALUES ('1', 'yanggang', '杨罡', '123321', '男', '1234567891234567', '12745674567');

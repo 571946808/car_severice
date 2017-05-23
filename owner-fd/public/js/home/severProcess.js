@@ -54,6 +54,7 @@ angular.module('sunApp').controller('severProcessController', function ($scope,$
                     skin: 'msg',
                     time: 2 
                 });
+                $state.go('severIng');
             }
         }, function errorCallback(response){
             console.log(response.data);
